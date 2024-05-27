@@ -25,10 +25,10 @@ const TabsLayout = () => {
     <Tabs
         screenOptions={{
             tabBarShowLabel: false,
-            tabBarActiveTintColor: '#FFA001',
+            tabBarActiveTintColor: '#19E301',
             tabBarInactiveInactiveColor: '#CDCDE0',
             tabBarStyle:{
-                backgroundColor: '#161622',
+                backgroundColor: '#000000',
                 borderTopWidth: 1,
                 borderTopColor: '#232533',
                 height: 84,
@@ -42,7 +42,7 @@ const TabsLayout = () => {
             headerShown: false,
             tabBarIcon: ({ color, focused}) => (
                 <TabIcon
-                icon={icons.home}
+                icon={icons.sport}
                 color={color}
                 name={"Games"}
                 focused={focused}
