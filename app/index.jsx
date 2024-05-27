@@ -11,7 +11,7 @@ const App = () => {
   return (
     <StyledView className="flex-1 items-center justify-center bg-white">
       <StyledText className="text-3xl font-pblack">Waleed</StyledText>
-      <Link href='/profile' style={{ color: 'blue' }}> Go to profile</Link>
+      <Link href='/games' style={{ color: 'blue' }}> Go to profile</Link>
     </StyledView>
   );
 }
