@@ -7,5 +7,6 @@ import logoSmall from "../assets/images/logo-small.png";
 import empty from "../assets/images/empty.png";
 import ahmed from "../assets/images/Ahmed.png";
 import onboarding from "../assets/images/onboarding-image.png";
+import logo1 from "../assets/images/logo1-removebg.png";
 
-export default { profile, thumbnail, cards, path, logo, logoSmall, empty, ahmed , onboarding};
+export default { profile, thumbnail, cards, path, logo, logoSmall, empty, ahmed , onboarding, logo1};
