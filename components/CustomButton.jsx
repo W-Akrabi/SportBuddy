@@ -9,7 +9,7 @@ const CustomButton = ({ title, handlePress,
     onPress={handlePress}
     activeOpacity={0.7}
     className={` bg-red
-    rounded-xl min-h-[62px] justify-center items-center ${containerStyles} ${isLoading ? opacity-50 : ''}`}
+    rounded-xl min-h-[62px] justify-center items-center ${containerStyles} ${isLoading ? 'opacity-50' : ''}`}
     disabled={isLoading}
     >
       <Text className={`text-white font-psemibold 
