@@ -6,8 +6,10 @@ import FormFeild from '../../components/FormFeild';
 import  CustomButton  from '../../components/CustomButton'
 import {Link, router} from 'expo-router'
 import { createUser } from '../../lib/appwrite';
+import { useGlobalContext } from "../../context/GlobalProvider";
 
 const SignUp = () => {
+  const { setUser, setIsLoggedIn } = useGlobalContext();
   const [form, setForm] = useState({
     username: '',
     email: '',
@@ -16,14 +18,16 @@ const SignUp = () => {
   const [isSubmitting, setIsSubmitting] = useState(false)
 
   const submit = async () => {
-    if(!form.username || !form.email || !form.password){
-      Alert.alert('Error', 'Please fill all feild')
+    if(form.username == "" || form.email == "" || form.password == ""){
+      Alert.alert('Error', 'Please fill all feild');
     }
 
     setIsSubmitting(true);
 
     try {
-      const result = await createUser(form.email, form.password, form.username)
+      const result = await createUser(form.email, form.password, form.username);
+      setUser(result);
+      setIsLoggedIn(true);
 
       router.replace("/games");
     } catch (error) {
@@ -31,8 +35,7 @@ const SignUp = () => {
     } finally {
       setIsSubmitting(false)
     }
-
-  }
+  };
 
   return (
     <SafeAreaView className="bg-black h-full">

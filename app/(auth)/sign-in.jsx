@@ -1,39 +1,41 @@
-import { View, Text, ScrollView, Image, Alert} from 'react-native'
-import {React, useState} from 'react'
-import { SafeAreaView } from 'react-native-safe-area-context'
+import { View, Text, ScrollView, Image, Alert} from 'react-native';
+import {React, useState} from 'react';
+import { SafeAreaView } from 'react-native-safe-area-context';
 import {images} from '../../constants';
 import FormFeild from '../../components/FormFeild';
-import  CustomButton  from '../../components/CustomButton'
-import {Link, router} from 'expo-router'
-import { signIn } from '../../lib/appwrite';
+import  CustomButton  from '../../components/CustomButton';
+import {Link, router} from 'expo-router';
+import { getCurrentUser, signIn } from '../../lib/appwrite';
+import { useGlobalContext } from "../../context/GlobalProvider";
 
 const SignIn = () => {
+  const { setUser, setIsLoggedIn } = useGlobalContext();
   const [form, setForm] = useState({
     email: '',
     password: ''
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const submit = async () => {
-    if(!form.email || !form.password){
-      Alert.alert('Error', 'Please fill all feild')
+    if(form.email == "" || form.password == ""){
+      Alert.alert('Error', 'Please fill all feilds');
     }
 
     setIsSubmitting(true);
 
     try {
-      await signIn(form.email, form.password)
-
-      
-
+      await signIn(form.email, form.password);
+      const result = await getCurrentUser();
+      setUser(result);
+      setIsLoggedIn(true);
+      Alert.alert("Success", "User signed in!");
       router.replace("/games");
     } catch (error) {
       Alert.alert('Error', error.message)
     } finally {
       setIsSubmitting(false)
     }
-
-  }
+  };
 
   return (
     <SafeAreaView className="bg-black h-full">
