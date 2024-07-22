@@ -18,7 +18,7 @@ const App = () => {
   if(isLoading && isLoggedIn) return <Redirect href="/games" />
 
   return (
-    <SafeAreaView className="bg-black h-full">
+    <SafeAreaView className="bg-primary h-full">
       <ScrollView contentContainerStyle={{ height: '100%'
     }}>
         <View className="w-full justify-center

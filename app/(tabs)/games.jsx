@@ -1,25 +1,31 @@
-import { View, Text, SafeAreaView, FlatList, Image, RefreshControl } from 'react-native'
-import {React, useState} from 'react'
+import { View, Text, SafeAreaView, FlatList, Image, RefreshControl, Alert } from 'react-native'
+import {React, useEffect, useState} from 'react'
 import {images} from '../../constants'
 import SearchInput from '../../components/SearchInput'
 import Popular from '../../components/Popular'
 import EmptyState from '../../components/EmptyState'
+import {getAllGames} from '../../lib/appwrite'
+import useAppwrite from '../../lib/useAppwrite'
+import GameCard from '../../components/GameCard'
 
 const Games = () => {
+  const { data: games, refetch } = useAppwrite(getAllGames);
+
   const [refreshing, setRefreshing] = useState(false)
+  
   const onRefresh = async () => {
     setRefreshing(true);
-    //re call games -> if any videos appeard
+    await refetch();
     setRefreshing(false);
   }
 
   return (
-    <SafeAreaView className="bg-black h-full">
+    <SafeAreaView className="bg-primary h-full">
       <FlatList
-        data={[{ id: 1}, {id: 2}, {id: 3}]}
-        keyExtractor={(item) => item.$id}
-        renderItem={({item}) => (
-          <Text className="text-3xl text-white">{item.id}</Text>
+        data={games}
+        keyExtractor={(item, index) => {return item.$id;}}
+        renderItem={({ item }) => (
+          <GameCard game={item} />
         )}
         ListHeaderComponent={() => (
           <View className="my-6 px-4 space-y-6">
@@ -49,7 +55,6 @@ const Games = () => {
                 available sessions
               </Text>
               
-              <Popular games={[{id: 1}, {id: 2}, {id: 3}] ?? []} />
             </View>
           </View>
         )}

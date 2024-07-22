@@ -12,7 +12,7 @@ handleChangeText, otherStyles, ...props} ) => {
       font-pmedium">{title}</Text>
 
       <View className="border-2 border-black-100 w-full
-      h-16 px-4 bg-black-100 rounded-2xl
+      h-16 px-4 bg-black rounded-2xl
       focus:border-grey flex-row">
         <TextInput 
           className="flex-1 text-white font-psemibold
@@ -29,7 +29,7 @@ handleChangeText, otherStyles, ...props} ) => {
           setShowPassword(!showPassword)}>
             <Image 
             source={!showPassword ? icons.eye : icons.eyeHide} 
-            className="w-6 h-6" resizeMode='contain'/>
+            className="w-6 h-13" resizeMode='contain'/>
           </TouchableOpacity>
         )}
 
