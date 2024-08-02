@@ -1,10 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import { withExpoSnack } from 'nativewind';
 import { Redirect, router } from 'expo-router'
 import { StatusBar } from 'expo-status-bar';
 import { styled } from 'nativewind';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import { Image, ScrollView, Text, View } from 'react-native';
+import { Image, ScrollView, Text, View, ActivityIndicator } from 'react-native';
 import { images} from '../constants';
 import CustomButton from '../components/CustomButton';
 import {useGlobalContext} from '../context/GlobalProvider';
@@ -13,9 +13,21 @@ const StyledText = styled(Text)
 
 
 const App = () => {
-  const { isLoading, isLoggedIn } = useGlobalContext();
+  const {isLoading, isLoggedIn } = useGlobalContext();
   
-  if(isLoading && isLoggedIn) return <Redirect href="/games" />
+  useEffect(() => {
+    if (!isLoading && isLoggedIn) {
+      router.replace('/games'); // Use replace to avoid adding to history stack
+    }
+  }, [isLoading, isLoggedIn]);
+
+  if (isLoading) {
+    return (
+      <SafeAreaView className="bg-primary h-full">
+        <ActivityIndicator size="large" color="#fff" />
+      </SafeAreaView>
+    );
+  }
 
   return (
     <SafeAreaView className="bg-primary h-full">

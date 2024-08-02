@@ -15,11 +15,12 @@ const SignUp = () => {
     email: '',
     password: ''
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const submit = async () => {
     if(form.username == "" || form.email == "" || form.password == ""){
-      Alert.alert('Error', 'Please fill all feild');
+      Alert.alert('Error', 'Please fill all field');
+      return;
     }
 
     setIsSubmitting(true);
