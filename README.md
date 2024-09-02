@@ -1,4 +1,30 @@
-# Welcome to the Expo app 👋
+# Sporti
+
+Sporti is a mobile app designed to help users in the Middle East find and join sports activities quickly and easily. Inspired by GoodRec, Sporti offers a broader range of sports and a user-friendly interface to help people connect through their favorite activities.
+
+![Sporti Logo](link-to-your-logo-image)
+
+## Features
+
+- **Discover Local Games:** Find nearby sports events, pickup games, and teams for various sports, including soccer, basketball, tennis, and more.
+- **Host Your Own Games:** Create and manage your own sports events, invite friends, and meet new people.
+- **Real-Time Notifications:** Stay updated on game schedules, changes, and reminders.
+- **Social Integration:** Connect with friends, share your activities, and join groups for your favorite sports.
+- **Advanced Filtering:** Search for games based on location, sport, skill level, and availability.
+
+## Supported Sports
+
+- Soccer
+- Basketball
+- Tennis
+- Volleyball
+- Cricket
+- And many more!
+
+## Screenshots
+
+![Sporti Screenshot 1](link-to-screenshot1)
+![Sporti Screenshot 2](link-to-screenshot2)
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
