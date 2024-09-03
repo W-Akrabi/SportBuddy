@@ -21,13 +21,13 @@ Sporti is a mobile app designed to help users in the Middle East find and join s
 
 ## Screenshots
 
-<img src="https://github.com/user-attachments/assets/5744ca8c-e80d-4e97-9661-24c80cb413ba" width="100" height="100">
+<img src="https://github.com/user-attachments/assets/5744ca8c-e80d-4e97-9661-24c80cb413ba" width="200" height="500">
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
 
 ## Get started
 
-1. Install dependencies
+1. Install dependencie
 
    ```bash
    npm install
