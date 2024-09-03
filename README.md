@@ -23,7 +23,7 @@ Sporti is a mobile app designed to help users in the Middle East find and join s
 
 ## Screenshots
 
-![Sporti Screenshot 1](link-to-screenshot1)
+![Sporti Screenshot 1]((https://github.com/W-Akrabi/SportBuddy/blob/main/Simulator%20Screenshot%20-%20iPhone%2015%20Pro%20-%202024-07-30%20at%2016.07.52.png))
 ![Sporti Screenshot 2](link-to-screenshot2)
 
 This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
